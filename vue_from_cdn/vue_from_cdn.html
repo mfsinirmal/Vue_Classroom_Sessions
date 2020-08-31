@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="main">
+        <!-- {{ message }} -->
+
+       <!-- <div v-bind:style="divStyle">
+            <input v-bind:value="message"/>            
+        </div> -->
+
+        <!-- <div>
+            <input v-model="message"/>                        
+        </div>
+        {{ message }} -->
+
+        <!-- <div>
+            <span v-html="showHTML"></span>
+        </div> -->
+
+        <!-- <span v-if="isWeekend">This is weekend. Enjoy!! </span> <br/>
+        <span v-show="isWeekend">This is weekend. Enjoy!! </span> -->
+
+        <!-- <span v-if="isWeekend">This is weekend. Enjoy!! </span>            
+        <span v-else>This is weekday. Let's work!! </span> -->
+
+        <!-- <span v-if="timeOftheDay=='Morning'">Good Morning</span>            
+        <span v-else-if="timeOftheDay=='Afternoon'">Good Afternoon</span>            
+        <span v-else>Good Evening</span>       -->
+
+        <!-- <ul>
+            <li v-for="hobby in myHobbies">{{ hobby }}</li>
+        </ul> -->
+
+        <!-- <ul>
+            <li v-for="things in thingsILike">{{ things.text }}</li>
+        </ul> -->
+        
+        <div>
+            <input type="checkbox" id="Monday" value="Monday" v-model="daySelected"/>
+            <label for="Monday">Monday</label>
+        </div>
+        <div>
+            <input type="checkbox" id="Tuesday" value="Tuesday" v-model="daySelected"/>
+            <label for="Tuesday">Tuesday</label>
+        </div>
+        <div>
+            <input type="checkbox" id="Wednesday" value="Wednesday" v-model="daySelected"/>
+            <label for="Wednesday">Wednesday</label>
+        </div>                
+        {{ daySelected }}
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#main",
+            data: {
+                message: "I love vue",
+                showHTML: "<b>This html rendering</b>",
+                isWeekend: true,
+                timeOftheDay: "Morning",
+                myHobbies: ["Listening Music", "Reading Book", "Talking to nice people"],
+                thingsILike: [
+                    {text: "Listening Music"}, 
+                    {text: "Reading Book"}, 
+                    {text: "Talking to nice people"}],
+                daySelected: []
+            }
+        });
+    </script>
+</body>
+</html>
