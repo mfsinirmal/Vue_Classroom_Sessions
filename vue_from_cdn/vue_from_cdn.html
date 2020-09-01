@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./vue_from_cdn.css">
 </head>
 <body>
     <div id="main">
@@ -54,24 +55,34 @@
             <label for="Wednesday">Wednesday</label>
         </div>                
         {{ daySelected }} -->
-        
+
+        <!-- <div>
+            <button v-on:click="showMessage">Show the new message</button>
+            {{ message }}
+        </div> -->
+
+        <!-- <div>
+            <label for="firstName">First Name</label>
+            <input v-model="firstName"/>
+        </div>
+        <div>
+            <label for="lastName">Last Name</label>
+            <input v-model="lastName"/>
+        </div>         -->
+        <!-- {{ showFullName() }}
+        {{ showFullName() }}
+        {{ showFullName() }}
+        {{ showFullName() }}
+        {{ showFullName() }} -->
+
+        <!-- {{ fullName }}
+        {{ fullName }}
+        {{ fullName }}
+        {{ fullName }}
+        {{ fullName }} -->
+        <my-first-component></my-first-component>
     </div>
-    <script>
-        var app = new Vue({
-            el: "#main",
-            data: {
-                message: "I love vue",
-                showHTML: "<b>This html rendering</b>",
-                isWeekend: true,
-                timeOftheDay: "Morning",
-                myHobbies: ["Listening Music", "Reading Book", "Talking to nice people"],
-                thingsILike: [
-                    {text: "Listening Music"}, 
-                    {text: "Reading Book"}, 
-                    {text: "Talking to nice people"}],
-                daySelected: []
-            }
-        });
-    </script>
+    <!-- <script src="./vue_from_cdn.js"></script> -->
+    <script src="./vue_from_cdn_component.js"></script>
 </body>
 </html>
