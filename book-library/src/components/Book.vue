@@ -42,3 +42,13 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .book-card {
+        padding: 4%;
+    }
+
+    img{
+        height: 10rem;
+    }
+</style>

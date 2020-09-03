@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Book Library</h1>
     <BookList/>
   </div>
 </template>
