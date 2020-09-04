@@ -4,7 +4,7 @@
             <img v-bind:src="book.image" alt="Book Image"/>
         </div>
         <div>
-            <span>{{ book.name }}</span>
+            <span v-highlight="'30px'">{{ book.name | appendPublisherName("Demo Pub")  }}</span>
         </div>        
     </div>
 </template>
@@ -19,6 +19,11 @@ export default {
                 return false;
             }
             return true;
+        }
+    },
+    filters: {
+        appendPublisherName:function(value, publisherName){
+            return publisherName + value
         }
     },
     props:{ 

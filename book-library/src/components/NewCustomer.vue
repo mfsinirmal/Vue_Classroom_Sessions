@@ -1,9 +1,11 @@
 <template>
     <div>
-        <label for="email">Email</lable>
-        <input id="email" v-model="email"/>
+        <label for="email_id">Email</label>
+        <input id="email_id" v-model="email"/>
 
-        <button @click="checkIfEmailIsEmpty">Check Email</button>
+        <button @click="checkIfEmailIsEmpty(email)">Check Email</button>
+        <button @click="checkIfPhoneIsBlank">Check Phone</button>
+        {{ message }}
     </div>
 </template>
 
@@ -12,7 +14,8 @@ import EmailChecker from "../mixins/EmailChecker.js"
 export default {
     data:()=>{
         return{
-            email: ""
+            email: "",
+            message: "Component message"
         }
     },
     mixins:[EmailChecker]

@@ -1,11 +1,11 @@
 <template>
     <div>
-        <NewBook v-on:savebook="createNewBook">
+        <!-- <NewBook v-on:savebook="createNewBook">
             <b>Please enter a new book</b>
             <template v-slot:header> <hr/> </template>
             <template v-slot:footer> <hr/>  </template>
-        </NewBook>
-
+        </NewBook> -->
+        <router-link to="/new" >New</router-link>
         <div class="book-list">            
             <Book v-for="book in books" v-bind:key="book.id" :book="book" :bookName="book.name" />      
         </div>        
@@ -14,7 +14,7 @@
 
 <script>
 import Book from "./Book.vue"
-import NewBook from "./NewBook.vue"
+// import NewBook from "./NewBook.vue"
 export default {
     name: 'BookList',
     data: function(){
@@ -27,7 +27,7 @@ export default {
     },
     components: {
         Book,
-        NewBook
+        // NewBook
     },
     methods: {
         createNewBook: function(book){

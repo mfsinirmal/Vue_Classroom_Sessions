@@ -1,19 +1,8 @@
 <template>
   <div id="app">
-    <h1>Book Library</h1>
-    <BookList/>
+    <router-view/>
   </div>
 </template>
-
-<script>
-import BookList from "./components/BookList"
-export default {
-  name: 'App',
-  components: {
-    BookList
-  }
-}
-</script>
 
 <style>
 #app {

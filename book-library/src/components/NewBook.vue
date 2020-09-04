@@ -1,7 +1,6 @@
 <template>
     <div>
-        <slot name="header"></slot>       
-        <slot></slot> 
+        <router-link to="/" >List</router-link>
         <div>
             <label for="BookName">Book Name</label>
             <input id="BookName" v-model="bookName"/>
