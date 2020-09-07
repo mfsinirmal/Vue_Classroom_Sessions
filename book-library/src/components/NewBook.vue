@@ -9,13 +9,14 @@
             <label for="ImageLink">Image Link</label>
             <input id="ImageLink" v-model="imageLink"/>
         </div>    
-        <button @click="$emit('savebook', savebook())">Save Book</button>    
+        <!-- <button @click="$emit('savebook', savebook())">Save Book</button>     -->
+        <button @click="savebook">Add Book</button>
         <slot name="footer"></slot>
     </div>
 </template>
 
 <script>
-
+//import {Store} from "../Store.js"
 export default {
     data: ()=>{
         return{
@@ -50,9 +51,11 @@ export default {
     methods: {
         savebook: function(){
             var book = {name: this.bookName, image: this.imageLink}
-            this.bookName = "";
-            this.imageLink="";
-            return book;
+            // this.bookName = "";
+            // this.imageLink="";
+            // return book;
+            // Store.AddBook(book);
+            this.$store.dispatch("SaveBook",book);
         }
     },
     watch:{

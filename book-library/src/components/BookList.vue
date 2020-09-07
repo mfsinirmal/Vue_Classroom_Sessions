@@ -7,27 +7,30 @@
         </NewBook> -->
         <router-link to="/new" >New</router-link>
         <div class="book-list">            
-            <Book v-for="book in books" v-bind:key="book.id" :book="book" :bookName="book.name" />      
+            <Book v-for="book in books" v-bind:key="book.id" :book="book" :bookName="book.name" />
         </div>        
     </div>    
 </template>
 
 <script>
 import Book from "./Book.vue"
+//import {Store} from "../Store.js"
 // import NewBook from "./NewBook.vue"
 export default {
     name: 'BookList',
     data: function(){
         return{          
-            books: [
-                {name: "Wings of fire", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSteLr45l2o4m4hjZJch0kZ2E9iAu5q2eVPVa-etA8ddTUz0vdv3STKBoQY2zE&usqp=CAc" },
-                {name: "Hit Refresh", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTt8kf5gMfPK6WI8dQ8eX6Bjwsl76HcJ42KyIVG28pe8yVeaZHrm-vs4DblEGAB2iYc2ywQtSU&usqp=CAc"},
-                ],
+            //books: Store.state.books
         }
     },
     components: {
         Book,
         // NewBook
+    },
+    computed:{
+        books: function(){
+            return this.$store.getters.getBooks
+        }
     },
     methods: {
         createNewBook: function(book){
